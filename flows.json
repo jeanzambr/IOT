@@ -1,0 +1,259 @@
+[
+    {
+        "id": "325db1420e9ade72",
+        "type": "tab",
+        "label": "HOLA MUNDO",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "968cf4d24376573b",
+        "type": "inject",
+        "z": "325db1420e9ade72",
+        "name": "holamundo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "chocolate",
+        "payload": "helado",
+        "payloadType": "str",
+        "x": 200,
+        "y": 60,
+        "wires": [
+            [
+                "f83c1dbf7c896433"
+            ]
+        ]
+    },
+    {
+        "id": "f83c1dbf7c896433",
+        "type": "debug",
+        "z": "325db1420e9ade72",
+        "name": "hola mundo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "40495fbc8166a94f",
+        "type": "inject",
+        "z": "325db1420e9ade72",
+        "name": "sensor temperatura",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "sensor",
+        "payload": "{\"temperature\":30,\"humedad\":30.3,\"ubicacion\":\"Quito, Ecuador\"}",
+        "payloadType": "json",
+        "x": 240,
+        "y": 120,
+        "wires": [
+            [
+                "f83c1dbf7c896433"
+            ]
+        ]
+    },
+    {
+        "id": "f2086c275e83e4d6",
+        "type": "switch",
+        "z": "325db1420e9ade72",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "43",
+                "vt": "str"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 430,
+        "y": 320,
+        "wires": [
+            [
+                "1861859f363a0324"
+            ],
+            [
+                "2ba29231f311f89b"
+            ],
+            [
+                "de31b1cd84da5d97"
+            ]
+        ]
+    },
+    {
+        "id": "dad258efbba152f2",
+        "type": "inject",
+        "z": "325db1420e9ade72",
+        "name": "50",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "line 1",
+        "payload": "50",
+        "payloadType": "str",
+        "x": 210,
+        "y": 280,
+        "wires": [
+            [
+                "f2086c275e83e4d6"
+            ]
+        ]
+    },
+    {
+        "id": "02a7d7cd28910e6b",
+        "type": "inject",
+        "z": "325db1420e9ade72",
+        "name": "43",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "line 2",
+        "payload": "43",
+        "payloadType": "str",
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "f2086c275e83e4d6"
+            ]
+        ]
+    },
+    {
+        "id": "400089e47bb4b453",
+        "type": "inject",
+        "z": "325db1420e9ade72",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "line 3",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 200,
+        "y": 360,
+        "wires": [
+            [
+                "f2086c275e83e4d6"
+            ]
+        ]
+    },
+    {
+        "id": "1861859f363a0324",
+        "type": "debug",
+        "z": "325db1420e9ade72",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "2ba29231f311f89b",
+        "type": "debug",
+        "z": "325db1420e9ade72",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "de31b1cd84da5d97",
+        "type": "debug",
+        "z": "325db1420e9ade72",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 360,
+        "wires": []
+    }
+]
