@@ -221,7 +221,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 620,
-        "y": 240,
+        "y": 200,
         "wires": []
     },
     {
